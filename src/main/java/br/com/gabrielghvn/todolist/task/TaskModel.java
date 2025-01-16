@@ -30,4 +30,11 @@ public class TaskModel {
   private LocalDateTime createdAt;
 
   private UUID idUser;
+
+  public void setTitle(String title) throws IllegalArgumentException {
+    if(title.length() > 50) {
+      throw new IllegalArgumentException("Title cannot be longer than 50 characters.");
+    }
+    this.title = title;
+  }
 }
